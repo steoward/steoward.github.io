@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://steoward.github.io/sitemap.xml
