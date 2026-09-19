@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Keyword Extractor</title>
+<style>body{font-family:sans-serif;max-width:800px;margin:0 auto;padding:2rem}input{width:70%;padding:12px}button{padding:12px 24px;background:#667eea;color:#fff;border:none;cursor:pointer}</style>
+</head>
+<body>
+    <h1>Keyword Extractor</h1>
+    <input type="url" id="url" placeholder="https://example.com">
+    <button onclick="extract()">Extract</button>
+    <div id="result" style="margin-top:2rem"></div>
+    <script>
+    async function extract() {
+        const url = document.getElementById('url').value;
+        const resp = await fetch('/keywords?url=' + encodeURIComponent(url));
+        const data = await resp.json();
+        let html = '<h2>Top Keywords</h2><ul>';
+        for (const kw of data.keywords || []) {
+            html += '<li>' + kw.word + ' (' + kw.count + ')</li>';
+        }
+        document.getElementById('result').innerHTML = html + '</ul>';
+    }
+    </script>
+</body>
+</html>
