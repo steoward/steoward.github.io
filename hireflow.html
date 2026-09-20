@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HireFlow AI - Recruitment Pipeline Automation</title>
+    <meta name="description" content="Automate your recruitment pipeline. Source candidates, enrich contacts, and run outreach campaigns. Built for recruiters who want results.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',-apple-system,sans-serif;background:#fafbfc;color:#1a1a2e;line-height:1.6}
+        .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:white;padding:5rem 2rem;text-align:center;min-height:80vh;display:flex;flex-direction:column;justify-content:center}
+        .hero h1{font-size:3rem;margin-bottom:1.5rem;font-weight:700;letter-spacing:-0.02em}
+        .hero p{font-size:1.25rem;opacity:0.9;max-width:640px;margin:0 auto 2.5rem;line-height:1.7}
+        .hero .accent{color:#e94560;font-weight:600}
+        .cta{display:inline-flex;align-items:center;gap:0.5rem;background:#e94560;color:white;padding:1rem 2.5rem;border-radius:12px;text-decoration:none;font-size:1.1rem;font-weight:600;transition:all 0.2s}
+        .cta:hover{transform:translateY(-2px);box-shadow:0 8px 25px rgba(233,69,96,0.3)}
+        .container{max-width:1100px;margin:0 auto;padding:2rem}
+        .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin:3rem 0}
+        .stat{background:white;padding:2rem;border-radius:16px;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+        .stat-value{font-size:2.5rem;font-weight:700;color:#e94560}
+        .stat-label{color:#666;font-size:0.9rem;margin-top:0.5rem}
+        .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;margin:3rem 0}
+        .feature{background:white;padding:2rem;border-radius:16px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+        .feature-icon{font-size:2rem;margin-bottom:1rem}
+        .feature h3{margin-bottom:0.5rem;font-size:1.25rem}
+        .feature p{color:#666}
+        .how{background:white;padding:3rem;border-radius:16px;margin:3rem 0;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+        .how h2{text-align:center;margin-bottom:2rem;font-size:2rem}
+        .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem}
+        .step{text-align:center}
+        .step-number{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;background:#e94560;color:white;border-radius:50%;font-weight:700;margin-bottom:1rem}
+        .step h4{margin-bottom:0.5rem}
+        .step p{color:#666;font-size:0.95rem}
+        .pricing{background:linear-gradient(135deg,#1a1a2e,#0f3460);color:white;padding:3rem;border-radius:16px;margin:3rem 0;text-align:center}
+        .pricing h2{font-size:2rem;margin-bottom:1rem}
+        .price{font-size:3.5rem;font-weight:700;margin:1rem 0}
+        .price span{font-size:1rem;opacity:0.8}
+        .pricing ul{list-style:none;margin:2rem 0}
+        .pricing li{padding:0.5rem 0;opacity:0.9}
+        .pricing .cta{background:white;color:#1a1a2e;margin-top:1rem}
+        .pricing .cta:hover{box-shadow:0 8px 25px rgba(255,255,255,0.2)}
+        footer{background:#1a1a2e;color:white;text-align:center;padding:3rem 2rem;margin-top:3rem}
+        footer a{color:#e94560;text-decoration:none}
+        @media(max-width:768px){
+            .hero h1{font-size:2rem}
+            .features,.steps{grid-template-columns:1fr}
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Stop Chasing Candidates.<br>Start <span class="accent">Closing Them.</span></h1>
+        <p>HireFlow AI automates your entire recruitment pipeline. Source candidates, enrich contact data, and run outreach campaigns — all on autopilot.</p>
+        <a href="#pricing" class="cta">Get Started →</a>
+    </div>
+    
+    <div class="container">
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">10x</div>
+                <div class="stat-label">Faster sourcing</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">5x</div>
+                <div class="stat-label">More responses</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">$1.8K</div>
+                <div class="stat-label">Average setup fee</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">24/7</div>
+                <div class="stat-label">Automated pipeline</div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">🔍</div>
+                <h3>Smart Sourcing</h3>
+                <p>Automatically find candidates across LinkedIn, Indeed, and niche job boards. No more manual searching.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📧</div>
+                <h3>Contact Enrichment</h3>
+                <p>Get verified emails and phone numbers for any candidate. No more bouncing emails.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Pipeline Tracking</h3>
+                <p>Visual pipeline management. Know exactly where every candidate stands.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">✉️</div>
+                <h3>Automated Outreach</h3>
+                <p>Personalized email sequences that get responses. Set it and forget it.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🤖</div>
+                <h3>AI-Powered</h3>
+                <p>Our AI screens candidates and ranks them by fit. You only talk to the best.</p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📈</div>
+                <h3>Analytics</h3>
+                <p>Track conversion rates, response times, and recruiter performance.</p>
+            </div>
+        </div>
+        
+        <div class="how">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Define Your Role</h4>
+                    <p>Tell us what positions you're hiring for and what ideal candidates look like.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>AI Sources Candidates</h4>
+                    <p>Our AI searches across multiple platforms and builds a qualified candidate list.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Automated Outreach</h4>
+                    <p>Personalized emails sent on autopilot. Responses flow back to your pipeline.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Review & Close</h4>
+                    <p>Review qualified candidates, conduct interviews, and make your hires.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="pricing" id="pricing">
+            <h2>Simple Pricing</h2>
+            <div class="price">$1,800<span>/setup</span></div>
+            <p>Everything you need to automate your recruitment:</p>
+            <ul>
+                <li>✅ Full system setup & configuration</li>
+                <li>✅ Integration with your existing tools</li>
+                <li>✅ Training for your team</li>
+                <li>✅ 30 days of support</li>
+                <li>✅ Unlimited candidates</li>
+                <li>✅ Custom AI screening for your roles</li>
+            </ul>
+            <a href="https://wa.me/96894079444?text=I%20want%20to%20set%20up%20HireFlow%20AI%20for%20my%20recruitment%20agency" class="cta">Book Setup Call</a>
+        </div>
+    </div>
+    
+    <footer>
+        <p>© 2026 HireFlow AI. Built by Hermes Oracle AI.</p>
+        <p><a href="https://wa.me/96894079444">WhatsApp</a> · <a href="mailto:fullty174@gmail.com">Email</a></p>
+    </footer>
+</body>
+</html>
