@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Keyword Research Tool</title>
+    <meta name="description" content="Extract keywords from any webpage. Analyze density and find content opportunities. No signup required.">
+    <style>
+        *{box-sizing:border-box;margin:0;padding:0}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f7fa;color:#333;line-height:1.6}
+        .hero{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;padding:3rem 2rem;text-align:center}
+        .hero h1{font-size:2rem;margin-bottom:1rem}
+        .hero p{font-size:1.1rem;opacity:0.9;max-width:600px;margin:0 auto 1.5rem}
+        .input-box{max-width:600px;margin:0 auto;display:flex;gap:0.5rem;flex-wrap:wrap;justify-content:center}
+        .input-box input{flex:1;min-width:250px;padding:14px;border:none;border-radius:8px;font-size:16px}
+        .input-box button{background:#e94560;color:white;border:none;padding:14px 28px;border-radius:8px;font-size:16px;cursor:pointer;font-weight:bold}
+        .container{max-width:900px;margin:0 auto;padding:2rem}
+        .result{margin-top:2rem;padding:2rem;background:white;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.1);display:none}
+        table{width:100%;border-collapse:collapse;margin-top:1rem}
+        th,td{padding:12px;text-align:left;border-bottom:1px solid #eee}
+        th{background:#f8f9fa;font-weight:600}
+        tr:hover{background:#f8f9fa}
+        .word{font-weight:600;color:#667eea}
+        .count{background:#e94560;color:white;padding:4px 8px;border-radius:20px;font-size:0.8rem}
+        footer{background:#1f2937;color:white;text-align:center;padding:2rem;margin-top:3rem}
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>🔑 Free Keyword Research</h1>
+        <p>Extract top keywords from any webpage. Analyze keyword density and find content opportunities.</p>
+        <div class="input-box">
+            <input type="url" id="url" placeholder="https://your-website.com">
+            <button onclick="analyze()">Analyze</button>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div id="result" class="result">
+            <h3>Keyword Analysis Results</h3>
+            <table>
+                <thead><tr><th>Keyword</th><th>Count</th><th>Density</th></tr></thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+    </div>
+    
+    <footer><p>© 2026 Hermes Oracle AI | Free Keyword Research Tool</p></footer>
+    
+    <script>
+    const stopwords = new Set(['the','a','an','and','or','but','in','on','at','to','for','of','with','is','are','was','were','be','been','being','have','has','had','do','does','did','will','would','could','should','may','might','can','shall','this','that','these','those','it','its','i','we','you','he','she','they','them','their','our','your','my','me','him','her','us','from','by','as','into','about','after','before','between','under','above','through','during','out','off','up','down','then','than','too','very','just','also','more','most','some','any','each','every','all','both','few','several','many','much','own','other','such','only','same','so','because','if','when','while','where','how','what','which','who','whom','why','not','no','nor','neither','either','whether','once','here','there','when','where','why','how','all','any','both','each','few','more','most','other','some','such','no','nor','not','only','own','same','so','than','too','very','can','will','just','don','should','now']);
+    
+    async function analyze() {
+        const url = document.getElementById('url').value;
+        if (!url) return alert('Please enter a URL');
+        
+        const resultDiv = document.getElementById('result');
+        resultDiv.style.display = 'block';
+        document.getElementById('tbody').innerHTML = '<tr><td colspan="3">Analyzing...</td></tr>';
+        
+        try {
+            const resp = await fetch('https://api.allorigins.win/get?url=' + encodeURIComponent(url));
+            const data = await resp.json();
+            const html = data.contents;
+            
+            const text = html.replace(/<[^>]+>/g, ' ').toLowerCase();
+            const words = text.match(/[a-z]{3,}/g) || [];
+            
+            const counts = {};
+            for (const w of words) {
+                if (stopwords.has(w)) continue;
+                counts[w] = (counts[w] || 0) + 1;
+            }
+            
+            const sorted = Object.entries(counts).sort((a, b) => b[1] - a[1]).slice(0, 20);
+            const total = words.length;
+            
+            document.getElementById('tbody').innerHTML = sorted.map(([word, count]) => {
+                const density = ((count / total) * 100).toFixed(2);
+                return '<tr><td class="word">' + word + '</td><td><span class="count">' + count + '</span></td><td>' + density + '%</td></tr>';
+            }).join('');
+            
+        } catch (e) {
+            document.getElementById('tbody').innerHTML = '<tr><td colspan="3">Error: ' + e.message + '</td></tr>';
+        }
+    }
+    </script>
+</body>
+</html>
