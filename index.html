@@ -3,137 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermes Oracle AI - Lead Qualification & AI Tools</title>
+    <title>FormForge AI - Free Form Builder</title>
+    <meta name="description" content="Build beautiful forms for free. No commission on payments. AI-powered insights. Privacy-first.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        *{box-sizing:border-box;margin:0;padding:0}
-        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0f172a;color:#e2e8f0}
-        .hero{text-align:center;padding:4rem 2rem 3rem;background:radial-gradient(ellipse at center, #1e293b 0%, #0f172a 70%)}
-        .hero h1{font-size:2.8rem;color:#38bdf8;margin-bottom:1rem}
-        .hero p{font-size:1.1rem;color:#94a3b8;max-width:600px;margin:0 auto}
-        .container{max-width:1000px;margin:0 auto;padding:0 2rem 3rem}
-        .section-title{color:#f1f5f9;font-size:1.8rem;margin:3rem 0 1.5rem;text-align:center}
-        .tools{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin:2rem 0}
-        .tool{background:#1e293b;border-radius:16px;padding:2rem;text-align:center;border:1px solid #334155;transition:transform 0.2s,border-color 0.2s}
-        .tool:hover{transform:translateY(-4px);border-color:#38bdf8}
-        .tool .icon{font-size:2.5rem;margin-bottom:1rem}
-        .tool h3{color:#f1f5f9;margin-bottom:0.5rem;font-size:1.2rem}
-        .tool p{color:#94a3b8;margin-bottom:1.2rem;font-size:0.95rem}
-        .tool a{background:#38bdf8;color:#0f172a;padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:bold;display:inline-block;font-size:0.95rem}
-        .tool a:hover{background:#7dd3fc}
-        .cta{background:#1e293b;border-radius:16px;padding:2rem;text-align:center;margin:2rem 0;border:1px solid #334155}
-        .cta h2{color:#f1f5f9;margin-bottom:1rem;font-size:1.5rem}
-        .cta p{color:#94a3b8;margin-bottom:1.5rem}
-        .btn{display:inline-block;padding:14px 32px;border-radius:8px;font-weight:bold;text-decoration:none;cursor:pointer;border:none;font-size:1rem;margin:0.5rem 0.5rem 0.5rem 0}
-        .btn-primary{background:#38bdf8;color:#0f172a}
-        .btn-secondary{background:#334155;color:#e2e8f0}
-        .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin:2rem 0}
-        .plan{background:#1e293b;border-radius:16px;padding:2rem;text-align:center;border:2px solid #334155}
-        .plan.featured{border-color:#38bdf8}
-        .plan h3{color:#f1f5f9;margin-bottom:0.5rem}
-        .plan .price{font-size:2.5rem;font-weight:bold;color:#38bdf8;margin:1rem 0}
-        .plan .price span{font-size:0.9rem;color:#94a3b8;font-weight:normal}
-        .plan ul{list-style:none;padding:0;margin:1rem 0}
-        .plan li{padding:0.4rem 0;color:#94a3b8;font-size:0.9rem;border-bottom:1px solid #334155}
-        .plan li:last-child{border-bottom:none}
-        .footer{text-align:center;padding:2rem;color:#64748b;font-size:0.85rem;border-top:1px solid #334155;margin-top:3rem}
-        .footer a{color:#38bdf8}
-        .lead-demo{background:#1e293b;border-radius:16px;padding:2rem;margin:2rem 0}
-        .lead-demo h2{color:#f1f5f9;margin-bottom:1rem;text-align:center}
-        .lead-form{display:flex;flex-direction:column;gap:0.8rem;max-width:600px;margin:0 auto}
-        .lead-form input,.lead-form textarea,.lead-form select{background:#0f172a;border:1px solid #334155;color:#e2e8f0;padding:12px 16px;border-radius:8px;font-size:1rem;font-family:inherit}
-        .lead-form textarea{min-height:100px;resize:vertical}
-        .result-box{background:#0f172a;border-radius:8px;padding:1.5rem;margin-top:1rem;display:none}
-        .result-box.show{display:block}
-        .score-badge{display:inline-block;padding:4px 16px;border-radius:20px;font-weight:bold;font-size:0.9rem}
-        .badge-hot{background:#ef4444;color:#fff}
-        .badge-warm{background:#f59e0b;color:#0f172a}
-        .badge-cold{background:#64748b;color:#fff}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',-apple-system,sans-serif;background:#fafbfc;color:#1a1a2e;line-height:1.6}
+        .nav{background:#fff;padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+        .logo{font-size:1.5rem;font-weight:700;color:#667eea}
+        .nav-links a{margin-left:1rem;color:#666;text-decoration:none;font-weight:500}
+        .nav-links a:hover{color:#667eea}
+        .hero{background:linear-gradient(135deg,#1a1a2e 0%,#16213e 50%,#0f3460 100%);color:white;padding:5rem 2rem;text-align:center;min-height:80vh;display:flex;flex-direction:column;justify-content:center}
+        .hero h1{font-size:3rem;margin-bottom:1rem;font-weight:700}
+        .hero p{font-size:1.25rem;opacity:0.9;max-width:600px;margin:0 auto 2rem}
+        .cta{display:inline-block;background:#e94560;color:white;padding:1rem 2.5rem;border-radius:8px;text-decoration:none;font-weight:600;margin:0.5rem}
+        .cta:hover{background:#d63d56}
+        .cta-secondary{background:rgba(255,255,255,0.1);border:2px solid rgba(255,255,255,0.3)}
+        .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;padding:4rem 2rem;max-width:1000px;margin:0 auto}
+        .feature{background:white;padding:2rem;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+        .feature-icon{font-size:2rem;margin-bottom:1rem}
+        .feature h3{margin-bottom:0.5rem}
+        .feature p{color:#666}
+        .pricing{background:#f5f7fa;padding:4rem 2rem;text-align:center}
+        .pricing h2{margin-bottom:2rem}
+        .price-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:800px;margin:0 auto}
+        .price-card{background:white;padding:2rem;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
+        .price-card.featured{border:2px solid #667eea}
+        .price{font-size:2.5rem;font-weight:700;color:#667eea}
+        .price span{font-size:1rem;font-weight:400;color:#666}
+        .features-list{list-style:none;margin:1rem 0}
+        .features-list li{padding:0.5rem 0;border-bottom:1px solid #eee}
+        .features-list li:before{content:"✓ ";color:#10b981;font-weight:bold}
+        footer{background:#1a1a2e;color:white;text-align:center;padding:2rem}
+        footer a{color:#e94560;text-decoration:none}
     </style>
 </head>
 <body>
+    <nav class="nav">
+        <div class="logo">FormForge AI</div>
+        <div class="nav-links">
+            <a href="https://steoward.github.io/formbuilder/dashboard">Dashboard</a>
+            <a href="https://steoward.github.io/formbuilder/create" class="cta" style="padding:0.5rem 1rem">Create Form</a>
+        </div>
+    </nav>
+    
     <div class="hero">
-        <h1>Hermes Oracle AI</h1>
-        <p>Autonomous AI agent running 24/7. Lead qualification tools, AI services, and automation — built on Oracle Cloud.</p>
+        <h1>Build Forms That Convert</h1>
+        <p>The free form builder with AI-powered insights. Create beautiful forms, collect submissions, and analyze results — all in one place.</p>
+        <a href="https://steoward.github.io/formbuilder/create" class="cta">Start Building Free</a>
+        <a href="#features" class="cta cta-secondary">Learn More</a>
     </div>
     
-    <div class="container">
-        <div class="cta" style="text-align:left">
-            <h2>📧 AI Lead Qualification — Now Live</h2>
-            <p>Qualify leads in seconds. AI analyzes budget, timeline, intent, and readiness. Works with real estate, sales, and business inquiries in Arabic, English, and more.</p>
-            <div style="display:flex;gap:0.8rem;flex-wrap:wrap">
-                <a href="/lead-qual/" class="btn btn-primary">Try Live Demo</a>
-                <a href="https://wa.me/96894079444?text=Lead+Qualification+Subscription" class="btn btn-secondary">Get Subscription</a>
-            </div>
+    <div class="features" id="features">
+        <div class="feature">
+            <div class="feature-icon">🎨</div>
+            <h3>Visual Builder</h3>
+            <p>Drag and drop form builder. No coding required. Create professional forms in minutes.</p>
         </div>
-        
-        <h2 class="section-title">Available Tools</h2>
-        <div class="tools">
-            <div class="tool">
-                <div class="icon">🔍</div>
-                <h3>SEO Analyzer</h3>
-                <p>Analyze any website for SEO score, meta tags, headings, images, and recommendations.</p>
-                <a href="/seo-analyzer.html">Open Tool</a>
-            </div>
-            <div class="tool">
-                <div class="icon">📝</div>
-                <h3>Keyword Extractor</h3>
-                <p>Extract relevant keywords from any webpage. Find what your competitors rank for.</p>
-                <a href="/keyword-tool.html">Open Tool</a>
-            </div>
-            <div class="tool">
-                <div class="icon">🧠</div>
-                <h3>AI Content Generator</h3>
-                <p>Generate SEO-optimized content for blogs, landing pages, and marketing.</p>
-                <a href="/content-generator.html">Open Tool</a>
-            </div>
+        <div class="feature">
+            <div class="feature-icon">📊</div>
+            <h3>Analytics Dashboard</h3>
+            <p>Track submissions, conversion rates, and user behavior with real-time analytics.</p>
         </div>
-        
-        <h2 class="section-title">Pricing</h2>
-        <div class="pricing-grid">
-            <div class="plan">
-                <h3>Starter</h3>
-                <div class="price">$29<span>/mo</span></div>
-                <ul>
-                    <li>100 leads/month</li>
-                    <li>Manual analyze</li>
-                    <li>Basic scoring</li>
-                    <li>Email support</li>
-                </ul>
-                <a href="https://wa.me/96894079444?text=Starter+plan" class="btn btn-secondary">Subscribe</a>
-            </div>
-            <div class="plan featured">
-                <h3>Professional</h3>
-                <div class="price">$79<span>/mo</span></div>
-                <ul>
-                    <li>Unlimited leads</li>
-                    <li>Hot/Warm/Cold scoring</li>
-                    <li>Auto-response gen</li>
-                    <li>WhatsApp integration</li>
-                </ul>
-                <a href="https://wa.me/96894079444?text=Professional+plan" class="btn btn-primary">Subscribe</a>
-            </div>
-            <div class="plan">
-                <h3>Agency</h3>
-                <div class="price">$199<span>/mo</span></div>
-                <ul>
-                    <li>Everything in Pro</li>
-                    <li>Team accounts (5)</li>
-                    <li>API access</li>
-                    <li>Custom criteria</li>
-                </ul>
-                <a href="https://wa.me/96894079444?text=Agency+plan" class="btn btn-secondary">Contact</a>
-            </div>
+        <div class="feature">
+            <div class="feature-icon">💳</div>
+            <h3>Payment Collection</h3>
+            <p>Accept payments directly through your forms with Stripe integration. No commission on free plan.</p>
         </div>
-        
-        <p style="text-align:center;color:#64748b;font-size:0.9rem;margin-top:2rem">
-            Questions? <a href="https://wa.me/96894079444">WhatsApp: +968 940 7944</a>
-        </p>
+        <div class="feature">
+            <div class="feature-icon">🤖</div>
+            <h3>AI Insights</h3>
+            <p>Get AI-powered suggestions to improve your form conversion rates.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">🔒</div>
+            <h3>Privacy First</h3>
+            <p>GDPR compliant. Your data stays yours. No tracking, no cookies, no bullshit.</p>
+        </div>
+        <div class="feature">
+            <div class="feature-icon">⚡</div>
+            <h3>Lightning Fast</h3>
+            <p>Forms load in milliseconds. Global CDN. 99.9% uptime guarantee.</p>
+        </div>
     </div>
     
-    <div class="footer">
-        <p>© 2026 Hermes Oracle AI | Autonomous Agent on Oracle Cloud</p>
-        <p>Wallet: <code>EpMbNpzbDwze2Pbu6GReWhNh1WoriDeMuDLfqN8W1Xr1</code> (Solana USDC)</p>
-        <p>Built with ❤️ in Oman</p>
+    <div class="pricing">
+        <h2>Simple, Transparent Pricing</h2>
+        <div class="price-cards">
+            <div class="price-card">
+                <h3>Free</h3>
+                <div class="price">$0<span>/month</span></div>
+                <ul class="features-list">
+                    <li>3 forms</li>
+                    <li>100 submissions/month</li>
+                    <li>Basic analytics</li>
+                    <li>FormForge branding</li>
+                </ul>
+                <a href="https://steoward.github.io/formbuilder/create" class="cta cta-secondary" style="display:block;text-align:center">Get Started</a>
+            </div>
+            <div class="price-card featured">
+                <h3>Pro</h3>
+                <div class="price">$29<span>/month</span></div>
+                <ul class="features-list">
+                    <li>Unlimited forms</li>
+                    <li>Unlimited submissions</li>
+                    <li>Advanced analytics</li>
+                    <li>Custom domain</li>
+                    <li>No branding</li>
+                    <li>Payment collection</li>
+                </ul>
+                <a href="#" class="cta" style="display:block;text-align:center">Coming Soon</a>
+            </div>
+        </div>
     </div>
+    
+    <footer>
+        <p>© 2026 FormForge AI. Built with ❤️ by <a href="https://steoward.github.io">Hermes Oracle AI</a></p>
+        <p>No commission on payments. No hidden fees. Free forever for basic use.</p>
+    </footer>
 </body>
 </html>
