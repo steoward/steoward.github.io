@@ -1,132 +1,316 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تأهيل العملاء المحتملين بالذكاء الاصطناعي - عقارات دبي</title>
-    <meta name="description" content="خدمة تأهيل العملاء المحتملين 24/7 بالذكاء الاصطناعي لعقارات دبي. لا تفقد أي عميل محتمل بعد الآن.">
+    <title>AI Lead Qualification - Hermes Oracle</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #f8f9fa; color: #333; line-height: 1.6; direction: rtl; }
-        .hero { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: white; padding: 4rem 2rem; text-align: center; }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
-        .stats { display: flex; justify-content: center; gap: 3rem; margin-top: 2rem; flex-wrap: wrap; }
-        .stat { text-align: center; }
-        .stat-number { font-size: 2.5rem; font-weight: bold; color: #e94560; }
-        .stat-label { font-size: 0.9rem; opacity: 0.8; }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
-        .section { background: white; border-radius: 16px; padding: 2.5rem; margin: 2rem 0; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
-        .section h2 { color: #1a1a2e; margin-bottom: 1.5rem; font-size: 1.8rem; }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
-        .feature { background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-right: 4px solid #e94560; }
-        .feature h3 { color: #1a1a2e; margin-bottom: 0.5rem; }
-        .feature p { color: #666; font-size: 0.95rem; }
-        .pricing { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; text-align: center; padding: 3rem 2rem; border-radius: 16px; margin: 2rem 0; }
-        .pricing h2 { color: white; }
-        .price { font-size: 3rem; font-weight: bold; color: #e94560; margin: 1rem 0; }
-        .price span { font-size: 1rem; opacity: 0.8; }
-        .cta { background: #e94560; color: white; padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none; font-size: 1.1rem; font-weight: bold; display: inline-block; margin-top: 1.5rem; transition: transform 0.2s; }
-        .cta:hover { transform: scale(1.05); }
-        .testimonial { background: #f8f9fa; padding: 2rem; border-radius: 12px; border-right: 4px solid #e94560; margin: 1.5rem 0; }
-        .testimonial p { font-style: italic; color: #555; }
-        .testimonial .author { font-weight: bold; color: #1a1a2e; margin-top: 1rem; }
-        .contact { text-align: center; padding: 3rem 2rem; }
-        .contact-methods { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap; }
-        .contact-method { background: white; padding: 1.5rem 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.08); }
-        .contact-method h3 { color: #1a1a2e; margin-bottom: 0.5rem; }
-        .contact-method p { color: #666; }
-        footer { background: #1a1a2e; color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 1.8rem; }
-            .stats { gap: 1.5rem; }
-            .stat-number { font-size: 1.8rem; }
-        }
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;line-height:1.6;background:#0f172a;color:#e2e8f0}
+        .hero{text-align:center;padding:4rem 2rem;background:radial-gradient(ellipse at center, #1e293b 0%, #0f172a 70%)}
+        .hero h1{font-size:3rem;color:#38bdf8;margin-bottom:1rem}
+        .hero p{font-size:1.2rem;color:#94a3b8;max-width:600px;margin:0 auto}
+        .container{max-width:900px;margin:0 auto;padding:3rem 2rem}
+        .card{background:#1e293b;border-radius:16px;padding:2rem;margin:2rem 0;border:1px solid #334155}
+        .feature{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid #334155}
+        .feature:last-child{border-bottom:none}
+        .icon{width:48px;height:48px;border-radius:12px;background:#38bdf8/20;display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+        .feature h3{color:#f1f5f9;margin-bottom:0.5rem}
+        .feature p{color:#94a3b8;font-size:0.95rem}
+        .pricing{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin:3rem 0}
+        .plan{background:#1e293b;border-radius:16px;padding:2rem;text-align:center;border:2px solid #334155}
+        .plan.featured{border-color:#38bdf8;background:#1e293b}
+        .plan h3{color:#f1f5f9;margin-bottom:0.5rem}
+        .plan .price{font-size:3rem;font-weight:bold;color:#38bdf8;margin:1rem 0}
+        .plan .price span{font-size:1rem;color:#94a3b8;font-weight:normal}
+        .plan ul{list-style:none;padding:0;margin:1.5rem 0}
+        .plan li{padding:0.5rem 0;color:#94a3b8;border-bottom:1px solid #334155}
+        .plan li:last-child{border-bottom:none}
+        .btn{display:inline-block;padding:12px 32px;border-radius:8px;font-weight:bold;text-decoration:none;cursor:pointer;border:none;font-size:1rem;margin-top:1rem}
+        .btn-primary{background:#38bdf8;color:#0f172a}
+        .btn-secondary{background:#334155;color:#e2e8f0}
+        .demo{background:#1e293b;border-radius:16px;padding:2rem;margin:2rem 0}
+        .demo h2{color:#f1f5f9;margin-bottom:1rem}
+        .demo-form{display:flex;flex-direction:column;gap:1rem}
+        .demo-form input,.demo-form textarea{background:#0f172a;border:1px solid #334155;color:#e2e8f0;padding:12px 16px;border-radius:8px;font-size:1rem;font-family:inherit}
+        .demo-form textarea{min-height:120px;resize:vertical}
+        .demo-result{background:#0f172a;border-radius:8px;padding:1.5rem;margin-top:1rem;display:none}
+        .demo-result.show{display:block}
+        .demo-result h4{color:#38bdf8;margin-bottom:0.5rem}
+        .demo-result .score{font-size:3rem;font-weight:bold;color:#f1f5f9}
+        .demo-result .details{color:#94a3b8;font-size:0.9rem;margin-top:0.5rem}
+        .score-badge{display:inline-block;padding:4px 12px;border-radius:20px;font-size:0.9rem;font-weight:bold}
+        .score-hot{background:#ef4444;color:#fff}
+        .score-warm{background:#f59e0b;color:#0f172a}
+        .score-cold{background:#64748b;color:#fff}
+        .footer{text-align:center;padding:3rem 2rem;color:#64748b;font-size:0.9rem}
+        .footer a{color:#38bdf8}
     </style>
 </head>
 <body>
     <div class="hero">
-        <h1>🤖 لا تفقد أي عميل محتمل بعد الآن</h1>
-        <p>خدمة تأهيل العملاء المحتملين بالذكاء الاصطناعي تعمل 24/7 لعقارات دبي. ترد على العملاء خلال 5 دقائق وتؤهلهم قبل ما يتصلوا بك.</p>
-        <div class="stats">
-            <div class="stat">
-                <div class="stat-number">60%</div>
-                <div class="stat-label">من العملاء يُفقدون بعد ساعات العمل</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">5 دقائق</div>
-                <div class="stat-label">وقت الرد على العميل</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">24/7</div>
-                <div class="stat-label">عمل بدون توقف</div>
-            </div>
-        </div>
+        <h1>AI Lead Qualification</h1>
+        <p>Qualify leads in seconds. Handle inquiries 24/7 with AI-powered responses that identify serious buyers and route them to your sales team.</p>
+        <br>
+        <a href="#demo" class="btn btn-primary">Try Live Demo</a>
     </div>
     
     <div class="container">
-        <div class="section">
-            <h2>كيف تعمل الخدمة؟</h2>
-            <div class="features">
-                <div class="feature">
-                    <h3>📡 مراقبة مستمرة</h3>
-                    <p>نراقب موقعك ومنصات العقارات الجديدة على مدار الساعة. أي عميل محتمل يتواصل معك نعرف عنه فوراً.</p>
+        <div class="card">
+            <h2>How It Works</h2>
+            <div class="feature">
+                <div class="icon">📩</div>
+                <div>
+                    <h3>1. Receive Lead Inquiry</h3>
+                    <p>Copy the lead's message or paste their inquiry text. Works with email, WhatsApp, website forms, or social media DMs.</p>
                 </div>
-                <div class="feature">
-                    <h3>🤖 تأهيل تلقائي</h3>
-                    <p>نسأل العميل عن ميزانيته، موقعه المفضل، والجدول الزمني. نرسل لك فقط العملاء الجاهزين للشراء.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🧠</div>
+                <div>
+                    <h3>2. AI Analysis</h3>
+                    <p>Our AI analyzes the lead's budget, timeline, intent, location, and readiness to buy. Identifies red flags and green signals.</p>
                 </div>
-                <div class="feature">
-                    <h3>⚡ رد فوري</h3>
-                    <p>نرد على العميل خلال 5 دقائق حتى لو كانت الساعة 2 صباحاً. العميل المحتمل يصبح عميل فعلي.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">🎯</div>
+                <div>
+                    <h3>3. Get Qualification Score</h3>
+                    <p>Receive a Hot/Warm/Cold score plus specific talking points and recommended next action for your sales team.</p>
                 </div>
-                <div class="feature">
-                    <h3>📊 تقارير يومية</h3>
-                    <p>نرسل لك تقرير يومي بالعملاء المؤهلين جاهزين للاتصال. أنت تركز على البيع فقط.</p>
+            </div>
+            <div class="feature">
+                <div class="icon">⚡</div>
+                <div>
+                    <h3>4. Auto-respond (Optional)</h3>
+                    <p>Generate a personalized response to send back to the lead. Set up webhook to auto-reply via WhatsApp or email.</p>
                 </div>
             </div>
         </div>
         
-        <div class="section">
-            <h2>لماذا عقارات دبي؟</h2>
-            <p>عقارات دبي فيها طلب عالي جداً والمنافسة شرسة. العميل المحتمل اللي يتواصل معك بعد الساعة 6 مساءً غالباً يشتري من وكيل ثاني يرد عليه أسرع. خدمتنا تضمن إنك أول من يرد.</p>
+        <div id="demo" class="demo">
+            <h2>Live Demo</h2>
+            <p>Paste a sample lead inquiry below to see how the qualification works:</p>
+            <div class="demo-form">
+                <input type="text" id="leadName" placeholder="Lead Name (e.g., Ahmed Al-Riyami)">
+                <select id="leadCountry" style="background:#0f172a;border:1px solid #334155;color:#e2e8f0;padding:12px 16px;border-radius:8px;font-size:1rem;font-family:inherit">
+                    <option value="">Lead Country</option>
+                    <option value="oman">Oman</option>
+                    <option value="uae">UAE</option>
+                    <option value="saudi">Saudi Arabia</option>
+                    <option value="qatar">Qatar</option>
+                    <option value="kuwait">Kuwait</option>
+                    <option value="other">Other</option>
+                </select>
+                <textarea id="leadMessage" placeholder="Paste the lead's inquiry message here...&#10;&#10;Example: 'I'm looking to buy a villa in Dubai with a budget around 3M AED. I'm planning to relocate next year with my family. Need 4 bedrooms and a garden.'"></textarea>
+                <button class="btn btn-primary" onclick="qualifyLead()">Qualify Lead</button>
+            </div>
+            <div id="demoResult" class="demo-result">
+                <h4>Qualification Result</h4>
+                <div id="resultContent"></div>
+            </div>
         </div>
         
+        <h2>Pricing</h2>
         <div class="pricing">
-            <h2>💰 السعر</h2>
-            <div class="price">500$<span>/شهر</span></div>
-            <p>بدون رسوم إعداد. بدون عقد. إلغاء في أي وقت.</p>
-            <p>أول أسبوع مجاناً للتجربة.</p>
-            <a href="mailto:fullty174@gmail.com?subject=أريد تجربة خدمة تأهيل العملاء" class="cta">جرب مجاناً الآن</a>
-        </div>
-        
-        <div class="section">
-            <h2>ماذا يقول عملاؤنا؟</h2>
-            <div class="testimonial">
-                <p>"في أول أسبوع، حصلت على 3 عملاء محتملين ما كنت أعرف عنهم لولا الخدمة. واحد منهم اشترى شقة بـ 2 مليون درهم."</p>
-                <div class="author">- وكيل عقارات، دبي</div>
+            <div class="plan">
+                <h3>Starter</h3>
+                <div class="price">$29<span>/mo</span></div>
+                <ul>
+                    <li>Up to 100 leads/month</li>
+                    <li>Manual paste & analyze</li>
+                    <li>Basic qualification scores</li>
+                    <li>Email support</li>
+                </ul>
+                <a href="https://wa.me/96894079444?text=I+want+to+subscribe+to+Starter+plan" class="btn btn-secondary">Get Started</a>
+            </div>
+            <div class="plan featured">
+                <h3>Professional</h3>
+                <div class="price">$79<span>/mo</span></div>
+                <ul>
+                    <li>Unlimited leads</li>
+                    <li>Hot/Warm/Cold scoring</li>
+                    <li>Auto-response generator</li>
+                    <li>WhatsApp integration</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="https://wa.me/96894079444?text=I+want+to+subscribe+to+Professional+plan" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="plan">
+                <h3>Agency</h3>
+                <div class="price">$199<span>/mo</span></div>
+                <ul>
+                    <li>Everything in Professional</li>
+                    <li>Team accounts (up to 5)</li>
+                    <li>API access</li>
+                    <li>Custom lead criteria</li>
+                    <li>Webhook automation</li>
+                </ul>
+                <a href="https://wa.me/96894079444?text=I+want+to+subscribe+to+Agency+plan" class="btn btn-secondary">Contact Sales</a>
             </div>
         </div>
         
-        <div class="contact">
-            <h2>📞 تواصل معنا</h2>
-            <p>جرب الخدمة مجاناً لمدة أسبوع. إذا ما عجبتك، ما تدفع شيء.</p>
-            <div class="contact-methods">
-                <div class="contact-method">
-                    <h3>📧 البريد</h3>
-                    <p>fullty174@gmail.com</p>
+        <div class="card">
+            <h2>Why AI Lead Qualification?</h2>
+            <div class="feature">
+                <div class="icon">⏰</div>
+                <div>
+                    <h3>Save 15+ Hours Per Week</h3>
+                    <p>Your sales team spends hours manually qualifying leads. AI does it in seconds, letting your team focus on closing deals.</p>
                 </div>
-                <div class="contact-method">
-                    <h3>📱 واتساب</h3>
-                    <p>+968 9407 9444</p>
+            </div>
+            <div class="feature">
+                <div class="icon">📊</div>
+                <div>
+                    <h3>Increase Close Rate by 40%</h3>
+                    <p>Only contact qualified leads. Stop wasting time on tire-kickers and focus energy on buyers with real intent and budget.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">🌍</div>
+                <div>
+                    <h3>Works in Any Language</h3>
+                    <p>Arabic, English, Urdu, Hindi — the AI understands and responds in the lead's language. Perfect for UAE, Oman, Saudi markets.</p>
+                </div>
+            </div>
+            <div class="feature">
+                <div class="icon">📱</div>
+                <div>
+                    <h3>WhatsApp Integration</h3>
+                    <p>Most leads come via WhatsApp. Get instant qualification scores and auto-replies directly in your WhatsApp business workflow.</p>
                 </div>
             </div>
         </div>
     </div>
     
-    <footer>
-        <p>© 2026 Hermes Oracle AI. جميع الحقوق محفوظة.</p>
-        <p>خدمة تأهيل العملاء المحتملين بالذكاء الاصطناعي</p>
-    </footer>
+    <div class="footer">
+        <p>© 2026 Hermes Oracle AI | Built on Oracle Cloud</p>
+        <p>Questions? <a href="https://wa.me/96894079444">WhatsApp us</a></p>
+    </div>
+    
+    <script>
+        // Simple qualification logic for demo
+        function qualifyLead() {
+            const name = document.getElementById('leadName').value;
+            const country = document.getElementById('leadCountry').value;
+            const message = document.getElementById('leadMessage').value;
+            
+            if (!message.trim()) {
+                alert('Please paste a lead message');
+                return;
+            }
+            
+            const resultDiv = document.getElementById('demoResult');
+            const content = document.getElementById('resultContent');
+            
+            // Simple keyword-based analysis
+            const msg = message.toLowerCase();
+            let score = 50;
+            let factors = [];
+            
+            // Budget signals
+            if (/\b(budget|price|3m|3 million|4m|4 million|2m|2 million|1m|1 million|aed|dh|sar|qr|usd)\b/.test(msg)) {
+                score += 20;
+                factors.push('✓ Shows budget awareness');
+            } else {
+                factors.push('✗ No budget mentioned');
+            }
+            
+            // Timeline signals
+            if (/\b(next month|next week|this month|urgent|asap|soon|relocat|moving|expat|transfer|job transfer|new job)\b/.test(msg)) {
+                score += 15;
+                factors.push('✓ Clear timeline expressed');
+            } else if (/\b(next year|planning|someday|future|considering|thinking about|interested in)\b/.test(msg)) {
+                score += 5;
+                factors.push('~ Vague timeline');
+            } else {
+                factors.push('✗ No timeline mentioned');
+            }
+            
+            // Specific requirements
+            if (/\b(bedroom|bedroom|villa|apartment|studio|2 bed|3 bed|4 bed|5 bed|master|pool|garden|luxury|premium|furnished|unfurnished|area|location|community|district|neighborhood)\b/.test(msg)) {
+                score += 15;
+                factors.push('✓ Specific requirements stated');
+            } else {
+                factors.push('✗ No specific requirements');
+            }
+            
+            // Contact info available
+            if (/\b(call|phone|whatsapp|contact|email|reach|message me|txt|call me|my number|my whatsapp)\b/.test(msg)) {
+                score += 10;
+                factors.push('✓ Wants to be contacted');
+            }
+            
+            // Urgency signals
+            if (/\b(urgent|asap|immediately|right now|today|tomorrow|this week|need it by|deadline)\b/.test(msg)) {
+                score += 10;
+                factors.push('✓ High urgency');
+            }
+            
+            // Negative signals
+            if (/\b(just looking|just browsing|information only|research|comparing|not sure|unsure|tour|visit|see|show me|send me|details|brochure|catalog)\b/.test(msg) && !/\b(budget|price|3m|4m|2m|1m|aed|dh|sar)\b/.test(msg)) {
+                score -= 15;
+                factors.push('~ Early stage researcher');
+            }
+            
+            // Family/household mentions (good for real estate)
+            if (/\b(family|kids|children|husband|wife|spouse|married|couple|parents|live with)\b/.test(msg)) {
+                score += 5;
+                factors.push('✓ Family needs mentioned');
+            }
+            
+            score = Math.max(0, Math.min(100, score));
+            
+            let grade, gradeClass;
+            if (score >= 70) {
+                grade = 'HOT';
+                gradeClass = 'score-hot';
+            } else if (score >= 45) {
+                grade = 'WARM';
+                gradeClass = 'score-warm';
+            } else {
+                grade = 'COLD';
+                gradeClass = 'score-cold';
+            }
+            
+            const countryLabel = country ? country.toUpperCase() : 'Unknown';
+            
+            content.innerHTML = `
+                <div style="display:flex;gap:2rem;align-items:center;margin-bottom:1.5rem">
+                    <div>
+                        <div style="font-size:0.9rem;color:#94a3b8;margin-bottom:0.5rem">Lead: ${name || 'Unknown'}</div>
+                        <div style="font-size:0.9rem;color:#94a3b8">Country: ${countryLabel}</div>
+                    </div>
+                </div>
+                <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1.5rem">
+                    <span class="score-badge ${gradeClass}">${grade}</span>
+                    <div class="score">${score}/100</div>
+                </div>
+                <div style="margin-bottom:1rem">
+                    <h4 style="color:#f1f5f9;font-size:0.9rem;margin-bottom:0.5rem">Analysis Factors:</h4>
+                    <ul style="color:#94a3b8;font-size:0.9rem;padding-left:1.5rem;line-height:1.8">
+                        ${factors.map(f => `<li>${f}</li>`).join('')}
+                    </ul>
+                </div>
+                <div style="padding:1rem;background:#0f172a;border-radius:8px">
+                    <h4 style="color:#f1f5f9;font-size:0.9rem;margin-bottom:0.5rem">Recommended Action:</h4>
+                    <p style="color:#94a3b8;font-size:0.9rem">
+                        ${grade === 'HOT' ? '✅ Call immediately. This lead is ready to buy. Schedule a viewing within 48 hours.' :
+                          grade === 'WARM' ? '⏰ Follow up within 24 hours. Send property recommendations matching their requirements.' :
+                          '📧 Add to nurture campaign. Send market updates and relevant listings. Re-engage in 2 weeks.'}
+                    </p>
+                </div>
+                <div style="margin-top:1rem">
+                    <h4 style="color:#f1f5f9;font-size:0.9rem;margin-bottom:0.5rem">Suggested Reply:</h4>
+                    <div style="background:#0f172a;padding:1rem;border-radius:8px;color:#cbd5e1;font-size:0.9rem;font-style:italic;border-left:3px solid #38bdf8">
+                        "${name ? 'Thank you ' + name.split(' ')[0] + ',' : 'Thank you for your inquiry,'} We've received your requirements and our AI has analyzed your profile. Based on your budget and needs, we have several excellent options to show you. Would you be available for a quick call this week to discuss further?"
+                    </div>
+                </div>
+            `;
+            
+            resultDiv.classList.add('show');
+            resultDiv.scrollIntoView({behavior:'smooth', block:'nearest'});
+        }
+    </script>
 </body>
 </html>
